@@ -1,0 +1,11 @@
+.mainHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background-color: rgba(183, 217, 247, 0.315);
+}
+
+.mainHeader__icon {
+  display: flex;
+  gap: 10px;
+}
