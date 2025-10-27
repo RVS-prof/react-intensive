@@ -1,6 +1,7 @@
 import type { IPostCard } from '../../../types/types';
 
-export default function PostCard( props : IPostCard) {
+
+const PostCard : React.FC<IPostCard> = ( props ) => {
   return (
     <section>
       <header>
@@ -15,4 +16,6 @@ export default function PostCard( props : IPostCard) {
       </div>
     </section>
   )
-}
+};
+
+export default PostCard
