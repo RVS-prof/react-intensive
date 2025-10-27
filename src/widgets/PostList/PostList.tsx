@@ -1,19 +1,21 @@
 import PostCard from "../../entities/post/ui/PostCard";
-
+import style from './PostList.module.css'
 
 export default function PostList() {
 
 
   return (
-    <div>
-      <header>
-        <h2>
+    <section className={style.mainForm}>
+      <header className={style.mainForm__header}>
+        <h1>
           Post List
-        </h2>
+        </h1>
       </header>
-      <section>
+      <section className={style.mainForm__cards}>
+        <PostCard />
+        <PostCard />
         <PostCard />
       </section>
-    </div>
+    </section>
   )
 }

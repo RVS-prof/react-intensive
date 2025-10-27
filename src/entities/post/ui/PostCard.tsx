@@ -1,13 +1,17 @@
 
 export default function PostCard() {
   return (
-    <div>
+    <section>
       <header>
-        Заголовок
+        <h2>
+          Заголовок
+        </h2>
       </header>
       <div>
-        Комментарий
+        <h4>
+          Комментарий
+        </h4>
       </div>
-    </div>
+    </section>
   )
 }
