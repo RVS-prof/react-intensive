@@ -1,8 +1,8 @@
-import './LayoutFooter.module.css'
+import style from './LayoutFooter.module.css'
 
 export default function LayoutFooter() {
 	return (
-		<footer>
+		<footer className={style.mainFooter}>
 			<h3>
 				Здесь могла быть ваша реклама
 			</h3>

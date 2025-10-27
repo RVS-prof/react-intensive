@@ -8,9 +8,9 @@ export default function PostCard() {
         </h2>
       </header>
       <div>
-        <h4>
+        <p>
           Комментарий
-        </h4>
+        </p>
       </div>
     </section>
   )

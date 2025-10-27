@@ -1,0 +1,9 @@
+.mainFooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background-color: rgba(29, 28, 28, 0.445);
+  color: rgb(252, 252, 252);
+  
+}
+
