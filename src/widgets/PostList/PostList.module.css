@@ -1,0 +1,32 @@
+.mainForm {
+  padding: 20px 0px;
+  margin: 20px 100px;
+  background-color: rgba(29, 28, 28, 0.445);
+  display: grid;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.mainForm__header {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  border-bottom: 3px solid rgba(43, 42, 42, 0.63);
+}
+
+.mainForm__header h1 {
+  margin: 0 0 20px;
+}
+
+.mainForm__cards {
+  min-height: 617px;
+  display: grid;
+  gap: 25px;
+  padding: 25px 0;
+}
+
+.mainForm__cards section {
+  margin: 0 15px;
+  padding: 0 15px;
+  border: 2px solid rgba(255, 255, 255, 0.486);
+  background-color: rgba(255, 255, 255, 0.233);
+}

@@ -1,13 +1,21 @@
+import type { IPostCard } from '../../../types/types';
 
-export default function PostCard() {
+
+const PostCard : React.FC<IPostCard> = ( props ) => {
   return (
-    <div>
+    <section>
       <header>
-        Заголовок
+        <h2>
+          {props.post.title}
+        </h2>
       </header>
       <div>
-        Комментарий
+        <p>
+          {props.post.body}
+        </p>
       </div>
-    </div>
+    </section>
   )
-}
+};
+
+export default PostCard
