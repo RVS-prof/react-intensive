@@ -10,15 +10,16 @@
   z-index: 10;
 }
 
-.v {
-  background-color: var(--modal-color);
+.modalForm {
+  background-color: var(--bg-primary);
   border: 2px solid var(--border-color);
+  color: var(--text-primary);
   padding: 25px 20px;
   width: 800px;
   height: 400px;
   border-radius: 10px;
 }
 
-/* .modalForm h1{
+.modalForm h1{
   text-align: center;
-} */
+}
