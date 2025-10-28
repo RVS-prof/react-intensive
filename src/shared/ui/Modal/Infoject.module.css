@@ -1,0 +1,20 @@
+.modalBack {
+  background-color: #00000054;
+  position: absolute;
+  inset: 0;
+  width: 99vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modalForm {
+  background-color: var(--modal-color);
+  border: 2px solid var(--border-color);
+  padding: 25px 20px;
+  width: 800px;
+  height: 400px;
+  border-radius: 10px;
+}

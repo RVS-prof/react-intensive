@@ -19,3 +19,8 @@ export interface ThemeContextType {
 export interface IProps {
   children: ReactNode;
 }
+
+export interface IActive {
+  isActive?: boolean;
+  setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
