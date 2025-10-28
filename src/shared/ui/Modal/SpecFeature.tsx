@@ -11,7 +11,7 @@ const SpecFeature = (props:IActive) => {
   return (
     <div className={style.modalForm}>
       <ThemeSwitcher/>
-      <MyButton className={style.button} onClick={handleClick}>
+      <MyButton onClick={handleClick}>
         О проекте
       </MyButton>
     </div>
