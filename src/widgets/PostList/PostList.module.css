@@ -1,7 +1,7 @@
 .mainForm {
   padding: 20px 0px;
   margin: 20px 100px;
-  background-color: rgba(29, 28, 28, 0.445);
+  background-color: var(--bg-secondary);
   display: grid;
   align-items: center;
   border-radius: 15px;
@@ -9,8 +9,8 @@
 
 .mainForm__header {
   text-align: center;
-  color: rgb(255, 255, 255);
-  border-bottom: 3px solid rgba(43, 42, 42, 0.63);
+  color: var(--text-primary);
+  border-bottom: 3px solid var(--border-color);
 }
 
 .mainForm__header h1 {
@@ -27,6 +27,7 @@
 .mainForm__cards section {
   margin: 0 15px;
   padding: 0 15px;
-  border: 2px solid rgba(255, 255, 255, 0.486);
-  background-color: rgba(255, 255, 255, 0.233);
+  border: 2px solid var(--card-border);
+  background-color: var(--card-bg);
+  color: var(--card-text);
 }

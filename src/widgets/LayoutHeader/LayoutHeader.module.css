@@ -2,11 +2,20 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
-  background-color: rgba(29, 28, 28, 0.445);
-  color: rgb(252, 252, 252);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .mainHeader__icon {
   display: flex;
   gap: 10px;
+}
+
+.mainHeader__button {
+  background-color: var(--card-bg);
+  border: 0;
+  border-radius: 15px;
+  padding: 10px 40px;
+  color: var(--text-primary);
+  font-size: 1.2em;
 }
