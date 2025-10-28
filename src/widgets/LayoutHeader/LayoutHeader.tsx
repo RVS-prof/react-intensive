@@ -16,7 +16,7 @@ export default function LayoutHeader() {
 
   const modalInfoject = () => {
     if(isActive)
-      return <Infoject/>
+      return <Infoject setIsActive={setIsActive}/>
   }
 
   return (
