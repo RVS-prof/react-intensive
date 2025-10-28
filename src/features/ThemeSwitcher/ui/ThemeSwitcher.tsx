@@ -8,12 +8,15 @@ export const ThemeSwitcher = () => {
 
   return (
     <MyButton 
-      className={styles.switcher}
+      className={styles.themeSwitcher}
       onClick={toggleTheme}
       aria-label={`Переключить на ${theme === 'light' ? 'тёмную' : 'светлую'} тему`}
     >
       <span className={styles.icon}>
         {theme === 'light' ? '🌙' : '☀️'}
+      </span>
+      <span className={styles.text}>
+        {theme === 'light' ? 'Тёмная' : 'Светлая'}
       </span>
     </MyButton>
   )

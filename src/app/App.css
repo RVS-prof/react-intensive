@@ -3,20 +3,22 @@
   --bg-secondary: #d6e7f7;
   --text-primary: #212529;
   --border-color: #9a9a9b;
+  --modal-color:#ececec;
 
-  --card-bg: rgba(255, 255, 255, 0.9); /* Фон карточек */
-  --card-border: 2px solid rgba(0, 0, 0, 0.3); /* Граница карточек */
-  --card-text: #2d2d2d; /* Цвет текста в карточках */
+  --card-bg: #ffffffe6;
+  --card-border: 2px solid #0000004d;
+  --card-text: #2d2d2d;
 }
 
 #root.darkTheme {
-  --bg-primary: rgb(136, 133, 133);
-  --bg-secondary: rgba(29, 28, 28, 0.445);
+  --bg-primary: #888585;
+  --bg-secondary: #1d1c1c71;
   --text-primary: #ffffff;
-  --border-color: rgba(185, 115, 115, 0.486);
+  --border-color: #b973737c;
+  --modal-color: rgb(150, 139, 139);
   
-  --card-bg: rgba(255, 255, 255, 0.233);
-  --card-border: 2px solid rgba(255, 255, 255, 0.486);
+  --card-bg: #ffffff3b;
+  --card-border: 2px solid #ffffff7c;
   --card-text: #ffffff;
   
   background-color: var(--bg-primary);
