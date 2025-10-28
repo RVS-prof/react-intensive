@@ -1,8 +1,27 @@
-body {
-  margin: 0;
+#root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #d6e7f7;
+  --text-primary: #212529;
+  --border-color: #9a9a9b;
+
+  --card-bg: rgba(255, 255, 255, 0.9); /* Фон карточек */
+  --card-border: 2px solid rgba(0, 0, 0, 0.3); /* Граница карточек */
+  --card-text: #2d2d2d; /* Цвет текста в карточках */
 }
 
-#root {
-  background-color: rgb(136, 133, 133);
-  min-height: 100vh;
+#root.darkTheme {
+  --bg-primary: rgb(136, 133, 133);
+  --bg-secondary: rgba(29, 28, 28, 0.445);
+  --text-primary: #ffffff;
+  --border-color: rgba(185, 115, 115, 0.486);
+  
+  --card-bg: rgba(255, 255, 255, 0.233);
+  --card-border: 2px solid rgba(255, 255, 255, 0.486);
+  --card-text: #ffffff;
+  
+  background-color: var(--bg-primary);
+}
+
+body {
+  margin: 0;
 }
