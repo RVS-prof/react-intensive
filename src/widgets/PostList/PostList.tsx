@@ -1,9 +1,9 @@
 import PostCard from "../../entities/post/ui/PostCard";
 import style from './PostList.module.css'
 import type { IPost } from "../../types/types";
-import { Example } from "./example";
 
-export default function PostList() {
+
+function PostList() {
   const posts : IPost[] = [
     {
       id: 1,
@@ -36,8 +36,9 @@ export default function PostList() {
             post={post}
           />
         ))}
-        <Example/>
       </section>
     </section>
   )
 }
+
+export default PostList

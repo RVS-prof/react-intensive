@@ -1,13 +1,13 @@
 import LayoutHeader from '../widgets/LayoutHeader/LayoutHeader'
 import LayoutFooter from '../widgets/LayoutFooter/LayoutFooter'
-import PostList from '../widgets/PostList/PostList'
+import PostLoading from '../widgets/PostList/PostLoading'
 
 
 export default function MainLayout() {
   return (
     <>
 			<LayoutHeader />
-			<PostList />
+			<PostLoading />
 			<LayoutFooter />
 		</>
   )

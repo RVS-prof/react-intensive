@@ -5,7 +5,7 @@ export const ModalHeader = () => {
   const { post } = useModalContext();
   return (
     <div className={styles.header}>
-      <h2 className={styles.title}>{post.title}</h2>
+      <h1 className={styles.title}>{post.title}</h1>
     </div>
   );
 };
