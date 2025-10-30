@@ -1,6 +1,7 @@
 import PostCard from "../../entities/post/ui/PostCard";
 import style from './PostList.module.css'
 import type { IPost } from "../../types/types";
+import { Example } from "./example";
 
 export default function PostList() {
   const posts : IPost[] = [
@@ -35,6 +36,7 @@ export default function PostList() {
             post={post}
           />
         ))}
+        <Example/>
       </section>
     </section>
   )

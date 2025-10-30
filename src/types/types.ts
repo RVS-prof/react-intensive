@@ -8,6 +8,7 @@ export interface IPost {
 
 export interface IPostCard {
   post : IPost
+  children?: ReactNode;
 }
 
 export interface ThemeContextType {
