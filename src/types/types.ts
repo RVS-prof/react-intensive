@@ -59,3 +59,10 @@ export interface ICommentList {
 export interface WithLoadingProps {
   isLoading: boolean;
 }
+
+export type IByLength = "long" | "short" | "default"
+
+export interface ISetterByLength {
+  lengthL: IByLength
+  setLength: React.Dispatch<React.SetStateAction<IByLength>>;
+}
