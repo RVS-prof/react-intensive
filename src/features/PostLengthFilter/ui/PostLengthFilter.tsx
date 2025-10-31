@@ -1,18 +1,5 @@
+import MySelect from "../../../shared/ui/Select/select";
 import type { IByLength, ISetterByLength} from "../../../types/types"
-
-
-interface RadioOption {
-  value: string;
-  label: string;
-}
-
-interface RadioGroupProps {
-  options: RadioOption[];
-  value?: string;
-  onChange?: (value: string) => void;
-  name: string;
-}
-
 
 const PostLengthFilter = (props : ISetterByLength ) => {
   const lengthArray : IByLength[] = ["long" , "short" , "default"]
@@ -23,18 +10,7 @@ const PostLengthFilter = (props : ISetterByLength ) => {
 
   return (
     <form>
-      {lengthArray.map((el : IByLength) => {
-        return <label key={el} className="radio-label">
-          <input
-            type="radio"
-            name={'checkLength'}
-            value={el}
-            checked={el === props.lengthL}
-            onChange={(e : any) => handleChange(e.target.value)}
-          />
-          <span>{el}</span>
-        </label>
-      })}
+      <MySelect options={lengthArray} value={props.lengthL} onChange={handleChange}/>
     </form>
   )
 }
