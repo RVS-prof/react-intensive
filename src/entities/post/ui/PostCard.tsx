@@ -1,7 +1,8 @@
 import { useCallback, useMemo, useState } from 'react';
-import type { IPostCard } from '../../../types/types';
+import type { IComment, IPostCard } from '../../../types/types';
 import { MyButton } from '../../../shared/ui/Button/MyButton';
 import CommentList from '../../../widgets/CommentList/ui/CommentList';
+import style from './PostCard.module.css'
 
 const PostCard = ( props : IPostCard) => {
   const [isShowMore, setIsShowMore] = useState(false)
@@ -12,10 +13,13 @@ const PostCard = ( props : IPostCard) => {
 
   const commentsSection = useMemo(() => {
     if (!isShowMore) return null;
-    return props.comments.map(comment => {
-      return <CommentList id = {comment.id } comment={comment} />
+    return props.comments.map((comment : IComment) => {
+      return <CommentList 
+        key = { comment.id } 
+        comment = { comment } 
+      />
     });
-  }, [isShowMore, props.comments]);
+  }, [ isShowMore, props.comments ]);
 
   return (
     <section>
@@ -29,8 +33,11 @@ const PostCard = ( props : IPostCard) => {
           {props.post.body}
         </p>
       </div>
-      <MyButton onClick = {toggleShowMore}>
-        {!isShowMore ?'show more...' : 'hide comments...'}
+      <MyButton onClick = {toggleShowMore} className={style.button}>
+        {!isShowMore 
+          ?'show more...' 
+          : 'hide comments...'
+        }
       </MyButton>
       {commentsSection}
     </section>

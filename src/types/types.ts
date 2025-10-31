@@ -52,6 +52,10 @@ export interface IComment {
   body: string
 }
 
+export interface ICommentList {
+  comment: IComment
+}
+
 export interface WithLoadingProps {
   isLoading: boolean;
 }

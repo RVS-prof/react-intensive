@@ -1,6 +1,6 @@
 #root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #d6e7f7;
+  --bg-primary: #dfdfdf;
+  --bg-secondary: #96999b;
   --text-primary: #212529;
   --border-color: #9a9a9b;
   --modal-color:#ececec;
@@ -8,6 +8,8 @@
   --card-bg: #ffffffe6;
   --card-border: 2px solid #0000004d;
   --card-text: #2d2d2d;
+
+  background-color: var(--bg-primary);
 }
 
 #root.darkTheme {
@@ -20,8 +22,6 @@
   --card-bg: #ffffff3b;
   --card-border: 2px solid #ffffff7c;
   --card-text: #ffffff;
-  
-  background-color: var(--bg-primary);
 }
 
 body {

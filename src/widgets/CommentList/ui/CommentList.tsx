@@ -1,13 +1,14 @@
-import type { IComment } from "../../../types/types"
+import type { ICommentList } from "../../../types/types"
+import style from './CommentList.module.css'
 
-const CommentList = ( props : IComment) => {
+const CommentList = ( props : ICommentList ) => {
 
   return (
-    <div>
-      <h2>Комментарий написал: {'\n' + props.name}</h2>
-      <h4>{props.email}</h4>  
-      <h3>{props.body}</h3>
-    </div>
+    <section className={style.comment}>
+      <h2>Комментарий написал: {'\n' + props.comment.name}</h2>
+      <h4>{props.comment.email}</h4>  
+      <h3>{props.comment.body}</h3>
+    </section>  
   )
 }
 
