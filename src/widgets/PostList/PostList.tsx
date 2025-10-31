@@ -2,7 +2,8 @@ import PostCard from "../../entities/post/ui/PostCard";
 import style from './PostList.module.css'
 import type { IByLength, IComment, IPost } from "../../types/types";
 import PostLengthFilter from "../../features/PostLengthFilter/ui/PostLengthFilter";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { filterByLength } from "../../features/PostLengthFilter/lib/filterByLength";
 
 function PostList() {
   const [headerLength, setHeaderLength] = useState<IByLength>('default')
@@ -23,6 +24,7 @@ function PostList() {
     body: "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
     }
   ];
+  const [newPosts, setNewPosts] = useState(posts)
   const commentList : IComment[] = [
   {
     "postId": 1,
@@ -97,6 +99,11 @@ function PostList() {
   ]
 
   const filteredComments = (id : number) => commentList.filter(element => element.postId === id)
+
+  useCallback(()=>{
+    filterByLength({newPosts, setNewPosts, headerLength})
+  },[headerLength])
+  
   
   return (
     <section className={style.mainForm}>
@@ -109,7 +116,7 @@ function PostList() {
         <PostLengthFilter lengthL = {headerLength} setLength = {setHeaderLength}/>
       </section>
       <section className={style.mainForm__cards}>
-        {posts.map((post:IPost) => (
+        {newPosts.map((post:IPost) => (
           <PostCard 
             key={post.id}
             post={post}

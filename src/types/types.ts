@@ -66,3 +66,9 @@ export interface ISetterByLength {
   lengthL: IByLength
   setLength: React.Dispatch<React.SetStateAction<IByLength>>;
 }
+
+export interface IPostLengthFilter {
+  newPosts: IPost[],
+  setNewPosts: React.Dispatch<React.SetStateAction<IPost[]>>,  
+  headerLength: IByLength
+}
