@@ -1,3 +1,4 @@
+import { useCallback } from "react"
 import { ThemeSwitcher } from "../../../features/ThemeSwitcher/ui/ThemeSwitcher"
 import type { IActive } from "../../../types/types"
 import { MyButton } from "../Button/MyButton"
@@ -5,10 +6,9 @@ import { ModalComponent } from "../CCModal"
 import style from "./SpecFeature.module.css"
 
 const SpecFeature = (props:IActive) => {
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     props.setIsActive(prev => !prev);
-  };
-
+  }, []);
 
   return (
     <div  className={style.modalForm}>
@@ -20,8 +20,6 @@ const SpecFeature = (props:IActive) => {
       }}>
         <ModalComponent.Button>
           <ThemeSwitcher/>
-        {/* </ModalComponent.Button>
-        <ModalComponent.Button> */}
           <MyButton onClick={handleClick}>
             О проекте
           </MyButton>
@@ -29,14 +27,6 @@ const SpecFeature = (props:IActive) => {
       </ModalComponent>
     </div>
   );
-  return (
-    <div className={style.modalForm}>
-      <ThemeSwitcher/>
-      <MyButton onClick={handleClick}>
-        О проекте
-      </MyButton>
-    </div>
-  )
 }
 
 export default SpecFeature

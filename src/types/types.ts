@@ -20,6 +20,7 @@ export interface IModalContextType {
 
 export interface IPostCard {
   post: IPost
+  comments: IComment[]
 }
 
 export interface ThemeContextType {
@@ -41,4 +42,16 @@ export interface WithDataLoadingProps<T> {
   data: T | null;
   isLoading: boolean;
   error?: string | null;
+}
+
+export interface IComment {
+  postId: number
+  id: number,
+  name: string,
+  email: string,
+  body: string
+}
+
+export interface WithLoadingProps {
+  isLoading: boolean;
 }

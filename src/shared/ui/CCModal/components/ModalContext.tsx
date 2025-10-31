@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
-import type { IPostCard } from '../../../../types/types';
+import type { IModalContextType } from '../../../../types/types';
 
-export const ModalContext = createContext<IPostCard | undefined>(undefined);
+export const ModalContext = createContext<IModalContextType | undefined>(undefined);
 
 export const useModalContext = () => {
   const context = useContext(ModalContext);
