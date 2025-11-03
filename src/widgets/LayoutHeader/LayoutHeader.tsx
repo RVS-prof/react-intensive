@@ -8,7 +8,6 @@ export default function LayoutHeader() {
   const [isOpen, setIsOpen] = useState(false)
   const [isActive, setIsActive] = useState(false)
 
-  console.log(isActive) 
   const modalSpecFeature = () => {
     if(isOpen)
       return <SpecFeature setIsActive={setIsActive}/>      

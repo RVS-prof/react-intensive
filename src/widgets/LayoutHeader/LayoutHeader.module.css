@@ -19,3 +19,8 @@
   color: var(--text-primary);
   font-size: 1.2em;
 }
+
+.mainHeader__button:hover {
+  cursor: pointer;
+  background-color: var(--bg-primary);
+}

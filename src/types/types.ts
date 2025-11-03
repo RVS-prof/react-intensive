@@ -1,13 +1,26 @@
 import type { ReactNode } from "react";
 
 export interface IPost {
-  id : number,
-  title : string,
-  body : string
+  id : number;
+  title : string;
+  body : string;
+}
+
+export interface IModal {
+  id : number;
+  title : string;
+  body : string;
+  size: 'sm' | 'md' | 'lg';
+}
+
+export interface IModalContextType {
+  post: IModal
+  children?: ReactNode;
 }
 
 export interface IPostCard {
-  post : IPost
+  post: IPost
+  comments: IComment[]
 }
 
 export interface ThemeContextType {
@@ -23,4 +36,43 @@ export interface IProps {
 export interface IActive {
   isActive?: boolean;
   setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface WithDataLoadingProps<T> {
+  data: T | null;
+  isLoading: boolean;
+  error?: string | null;
+}
+
+export interface IComment {
+  postId: number
+  id: number,
+  name: string,
+  email: string,
+  body: string
+}
+
+export interface ICommentList {
+  comment: IComment
+}
+
+export interface WithLoadingProps {
+  isLoading: boolean;
+}
+
+export type IByLength = "long" | "short" | "default"
+
+export interface ISetterByLength {
+  lengthL: IByLength
+  setLength: React.Dispatch<React.SetStateAction<IByLength>>;
+}
+
+export interface IPostLengthFilter {
+  posts: IPost[],
+  headerLength: IByLength
+}
+
+export interface INewPosts {
+  filteredPosts: IPost[],
+  setNewPosts: React.Dispatch<React.SetStateAction<IPost[]>>
 }

@@ -17,6 +17,11 @@
   margin: 0 0 20px;
 }
 
+.mainForm__selectList {
+  margin: 10px 15px 0;
+}
+
+
 .mainForm__cards {
   min-height: 617px;
   display: grid;
@@ -24,10 +29,11 @@
   padding: 25px 0;
 }
 
-.mainForm__cards section {
+.mainForm__cards > section {
   margin: 0 15px;
   padding: 0 15px;
   border: 2px solid var(--card-border);
   background-color: var(--card-bg);
   color: var(--card-text);
+  min-height: 145px;
 }

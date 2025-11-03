@@ -1,0 +1,10 @@
+.button {
+  border: 0;
+  color: #ff7300;
+  background-color: #00000000;
+}
+
+.button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
