@@ -68,7 +68,11 @@ export interface ISetterByLength {
 }
 
 export interface IPostLengthFilter {
-  newPosts: IPost[],
-  setNewPosts: React.Dispatch<React.SetStateAction<IPost[]>>,  
+  posts: IPost[],
   headerLength: IByLength
+}
+
+export interface INewPosts {
+  filteredPosts: IPost[],
+  setNewPosts: React.Dispatch<React.SetStateAction<IPost[]>>
 }

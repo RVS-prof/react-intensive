@@ -2,12 +2,14 @@ import PostCard from "../../entities/post/ui/PostCard";
 import style from './PostList.module.css'
 import type { IByLength, IComment, IPost } from "../../types/types";
 import PostLengthFilter from "../../features/PostLengthFilter/ui/PostLengthFilter";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { filterByLength } from "../../features/PostLengthFilter/lib/filterByLength";
+
 
 function PostList() {
   const [headerLength, setHeaderLength] = useState<IByLength>('default')
-  const posts : IPost[] = [
+  const [newPosts, setNewPosts] = useState<IPost[]>([])
+    const posts : IPost[] = [
     {
       id: 1,
       title: 'id labore ex et quam laborum',
@@ -24,7 +26,6 @@ function PostList() {
     body: "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
     }
   ];
-  const [newPosts, setNewPosts] = useState(posts)
   const commentList : IComment[] = [
   {
     "postId": 1,
@@ -97,14 +98,20 @@ function PostList() {
     "body": "nihil ut voluptates blanditiis autem odio dicta rerum\nquisquam saepe et est\nsunt quasi nemo laudantium deserunt\nmolestias tempora quo quia"
   }
   ]
+  const filteredComments = useCallback(
+   (id : number) => 
+      commentList.filter(element => 
+        element.postId === id)
+  ,[newPosts])
 
-  const filteredComments = (id : number) => commentList.filter(element => element.postId === id)
+  const filteredPosts = useMemo(() =>
+    filterByLength({posts, headerLength})
+  , [posts, headerLength])
 
-  useCallback(()=>{
-    filterByLength({newPosts, setNewPosts, headerLength})
+  useEffect(()=>{
+    setNewPosts(filteredPosts)
   },[headerLength])
-  
-  
+
   return (
     <section className={style.mainForm}>
       <header className={style.mainForm__header}>

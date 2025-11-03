@@ -20,7 +20,7 @@ const PostCard = ( props : IPostCard) => {
       />
     });
   }, [ isShowMore, props.comments ]);
-
+  
   return (
     <section>
       <header>
