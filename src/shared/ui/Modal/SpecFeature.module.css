@@ -4,3 +4,8 @@
   top: 60px;
   padding: 25px 20px;
 }
+
+.modalForm__button:hover {
+  cursor: pointer;
+  background-color: var();
+}

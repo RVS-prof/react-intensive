@@ -1,5 +1,6 @@
 import React from 'react';
 import type { WithLoadingProps } from '../../../types/types';
+import style from './WithLoading.module.css'
 
 function withLoading<P extends object>(
   WrappedComponent: React.ComponentType<P>
@@ -7,8 +8,8 @@ function withLoading<P extends object>(
   return ({ isLoading, ...props }: P & WithLoadingProps) => {
     if (isLoading) {
       return (
-        <div className="loading-container">
-          <div className="spinner">Загрузка...</div>
+        <div className={style.loadingContainer}>
+          <div>Загрузка...</div>
         </div>
       );
     }

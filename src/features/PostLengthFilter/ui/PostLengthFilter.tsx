@@ -9,9 +9,9 @@ const PostLengthFilter = (props : ISetterByLength ) => {
   };
 
   return (
-    <form>
+    <>
       <MySelect options={lengthArray} value={props.lengthL} onChange={handleChange}/>
-    </form>
+    </>
   )
 }
 

@@ -17,6 +17,11 @@
   margin: 0 0 20px;
 }
 
+.mainForm__selectList {
+  margin: 10px 15px 0;
+}
+
+
 .mainForm__cards {
   min-height: 617px;
   display: grid;

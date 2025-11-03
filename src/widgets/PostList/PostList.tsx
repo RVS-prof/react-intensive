@@ -119,7 +119,7 @@ function PostList() {
           Post List
         </h1>
       </header>
-      <section>
+      <section className={style.mainForm__selectList}>
         <PostLengthFilter lengthL = {headerLength} setLength = {setHeaderLength}/>
       </section>
       <section className={style.mainForm__cards}>

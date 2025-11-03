@@ -20,7 +20,7 @@ const SpecFeature = (props:IActive) => {
       }}>
         <ModalComponent.Button>
           <ThemeSwitcher/>
-          <MyButton onClick={handleClick}>
+          <MyButton onClick={handleClick} >
             О проекте
           </MyButton>
         </ModalComponent.Button>

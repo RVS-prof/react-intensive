@@ -1,0 +1,10 @@
+.select {
+  min-width: 100px;
+  background-color: var(--bg-primary);
+  color: var(--card-text);
+}
+
+.select:hover {
+  background-color: var(--card-bg);
+  cursor: pointer;
+}
