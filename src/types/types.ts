@@ -76,3 +76,9 @@ export interface INewPosts {
   filteredPosts: IPost[],
   setNewPosts: React.Dispatch<React.SetStateAction<IPost[]>>
 }
+
+export interface TabItem {
+  path: string;
+  label: string;
+  icon?: string;
+}
