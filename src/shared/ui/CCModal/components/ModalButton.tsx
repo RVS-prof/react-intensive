@@ -1,4 +1,4 @@
-import type { IProps } from '../../../../types/types';
+import type { IProps } from '../../../../app/types/types';
 import styles from './Modal.module.css';
 
 export const ModalButton = ({ children }: IProps) => {

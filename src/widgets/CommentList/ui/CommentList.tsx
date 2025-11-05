@@ -1,4 +1,4 @@
-import type { ICommentList } from "../../../types/types"
+import type { ICommentList } from "../../../app/types/types"
 import style from './CommentList.module.css'
 
 const CommentList = ( props : ICommentList ) => {

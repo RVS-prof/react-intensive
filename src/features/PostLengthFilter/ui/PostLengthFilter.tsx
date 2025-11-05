@@ -1,5 +1,5 @@
 import MySelect from "../../../shared/ui/Select/select";
-import type { IByLength, ISetterByLength} from "../../../types/types"
+import type { IByLength, ISetterByLength} from "../../../app/types/types"
 
 const PostLengthFilter = (props : ISetterByLength ) => {
   const lengthArray : IByLength[] = ["long" , "short" , "default"]

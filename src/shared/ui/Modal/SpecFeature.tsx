@@ -1,6 +1,6 @@
 import { useCallback } from "react"
 import { ThemeSwitcher } from "../../../features/ThemeSwitcher/ui/ThemeSwitcher"
-import type { IActive } from "../../../types/types"
+import type { IActive } from "../../../app/types/types"
 import { MyButton } from "../Button/MyButton"
 import { ModalComponent } from "../CCModal"
 import style from "./SpecFeature.module.css"

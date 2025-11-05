@@ -1,4 +1,4 @@
-import type { IActive } from '../../../types/types'
+import type { IActive } from '../../../app/types/types'
 import { ModalComponent } from '../CCModal';
 import style from './Infoject.module.css'
 

@@ -1,9 +1,10 @@
 import PostCard from "../../entities/post/ui/PostCard";
 import style from './PostList.module.css'
-import type { IByLength, IComment, IPost } from "../../types/types";
+import type { IByLength, IComment, IPost } from "../../app/types/types";
 import PostLengthFilter from "../../features/PostLengthFilter/ui/PostLengthFilter";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { filterByLength } from "../../features/PostLengthFilter/lib/filterByLength";
+import usePosts from "../../features/PostList/model/hooks/usePosts";
 
 
 function PostList() {
@@ -103,6 +104,9 @@ function PostList() {
       commentList.filter(element => 
         element.postId === id)
   ,[newPosts])
+        console.log(usePosts);
+        
+  
 
   const filteredPosts = useMemo(() =>
     filterByLength({posts, headerLength})
