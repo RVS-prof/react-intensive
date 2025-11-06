@@ -1,3 +1,4 @@
+import { Outlet } from "react-router"
 import UserTabs from "../widgets/UserTabs/UserTabs"
 
 export const User = () => {
@@ -8,6 +9,7 @@ export const User = () => {
       <header>
         <UserTabs userId={idd}/>
       </header>
+      <Outlet />
     </>
   )
 }

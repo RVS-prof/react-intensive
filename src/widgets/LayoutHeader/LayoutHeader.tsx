@@ -3,20 +3,13 @@ import { MyButton } from '../../shared/ui/Button/MyButton'
 import SpecFeature from '../../shared/ui/Modal/SpecFeature'
 import style from './LayoutHeader.module.css'
 import Infoject from '../../shared/ui/Modal/Infoject'
+import LoginUser from '../../shared/ui/Modal/loginUser'
+
 
 export default function LayoutHeader() {
   const [isOpen, setIsOpen] = useState(false)
   const [isActive, setIsActive] = useState(false)
-
-  const modalSpecFeature = () => {
-    if(isOpen)
-      return <SpecFeature setIsActive={setIsActive}/>      
-  }
-
-  const modalInfoject = () => {
-    if(isActive)
-      return <Infoject setIsActive={setIsActive}/>
-  }
+  const [login, setLogin] = useState(false)
 
   return (
     <>
@@ -31,9 +24,10 @@ export default function LayoutHeader() {
         <MyButton className={style.mainHeader__button} onClick={() => setIsOpen(!isOpen)}>
           Специальные возможности
         </MyButton>
-        {modalSpecFeature()}
+        {isOpen && <SpecFeature setIsActive={setIsActive} setLogin={setLogin}/>}
       </header>
-      {modalInfoject()}
+      {isActive && <Infoject setIsActive={setIsActive}/>}
+      {login && <LoginUser setLogin={setLogin}/>}
     </>
   )
 }

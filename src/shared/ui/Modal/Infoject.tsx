@@ -1,6 +1,6 @@
-import type { IActive } from '../../../app/types/types'
 import { ModalComponent } from '../CCModal';
 import style from './Infoject.module.css'
+import type { IActive } from './type';
 
 const Infoject = (props:IActive) => {
   const handleClick = () => {

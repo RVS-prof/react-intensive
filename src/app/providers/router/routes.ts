@@ -11,7 +11,7 @@ import { AlbumPhotos } from "../../../pages/AlbumPhotos";
     path: "/",
     Component: Main,
     children: [
-      { path: "/posts/:id"} 
+      { path: "/posts/:id" } 
     ]
   },
   { path: "/user/:id", Component: User,
