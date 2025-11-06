@@ -1,32 +1,13 @@
 import PostCard from "../../entities/post/ui/PostCard";
 import style from './PostList.module.css'
-import type { IByLength, IComment, IPost } from "../../app/types/types";
+import type { IByLength, IComment, IPost, IPostList } from "./type";
 import PostLengthFilter from "../../features/PostLengthFilter/ui/PostLengthFilter";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { filterByLength } from "../../features/PostLengthFilter/lib/filterByLength";
-import usePosts from "../../features/PostList/model/hooks/usePosts";
 
-
-function PostList() {
+const  PostList : React.FC<IPostList> = ({posts}) => {
   const [headerLength, setHeaderLength] = useState<IByLength>('default')
   const [newPosts, setNewPosts] = useState<IPost[]>([])
-    const posts : IPost[] = [
-    {
-      id: 1,
-      title: 'id labore ex et quam laborum',
-      body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
-    },
-    {
-      id: 2,
-      title: "quo vero reiciendis velit similique earum",
-      body: "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
-    },
-    {
-    id: 3,
-    title: "odio adipisci rerum aut animi",
-    body: "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
-    }
-  ];
   const commentList : IComment[] = [
   {
     "postId": 1,
@@ -99,14 +80,12 @@ function PostList() {
     "body": "nihil ut voluptates blanditiis autem odio dicta rerum\nquisquam saepe et est\nsunt quasi nemo laudantium deserunt\nmolestias tempora quo quia"
   }
   ]
+
   const filteredComments = useCallback(
    (id : number) => 
       commentList.filter(element => 
         element.postId === id)
   ,[newPosts])
-        console.log(usePosts);
-        
-  
 
   const filteredPosts = useMemo(() =>
     filterByLength({posts, headerLength})

@@ -4,7 +4,7 @@ import { ModalBody } from './ModalBody'
 import { ModalFooter } from './ModalFooter'
 import { ModalButton } from './ModalButton';
 import { ModalContext } from './ModalContext';
-import type { IModalContextType } from '../../../../app/types/types';
+import type { IModalContextType } from '../type';
 
 export const ModalComponent = ({children, post}: IModalContextType) => {
   return (

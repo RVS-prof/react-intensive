@@ -1,17 +1,15 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query"
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+import type { IPost } from "../PostLengthFilter/type"
 
-export const apiSlice = createApi({
-    reducerPath: 'apiSlice',
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/comments' }),
+export const PostApiSlice = createApi({
+    reducerPath: 'post',
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/' }),
     endpoints: (builder) => ({
-        getPosts: builder.query({
-            query: () => `posts`
+        getPosts: builder.query<IPost[], { limit: number, offset: number }>({
+            query: ({limit, offset}) => `posts?_limit=${limit}&_offset=${offset}`
         })
     }),
 
 })
 
-console.log(apiSlice);
-
-
-export const { useGetPostsQuery }:any = apiSlice
+export const { useGetPostsQuery } = PostApiSlice

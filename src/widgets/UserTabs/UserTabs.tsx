@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import type { TabItem } from '../../app/types/types';
+import type { TabItem } from './type';
 import styles from './UserTabs.module.css';
 
 const UserTabs = ({ userId } : { userId: number }) => {

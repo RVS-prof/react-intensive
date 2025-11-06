@@ -6,7 +6,6 @@ import { UserToDos } from "../../../pages/UserToDos";
 import { UserAlbum } from "../../../pages/UserAlbum";
 import { AlbumPhotos } from "../../../pages/AlbumPhotos";
 
-
  export const router = createBrowserRouter([
   {
     path: "/",
