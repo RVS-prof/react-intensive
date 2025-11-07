@@ -16,3 +16,14 @@ export interface IPost {
   title : string;
   body : string;
 }
+
+export interface IAPIEntity {
+  userId? : number;
+  postId? : number;
+  id : number;
+  title? : string;
+  body? : string;
+  completed? : boolean;
+  name? : string;
+  email? : string;
+}

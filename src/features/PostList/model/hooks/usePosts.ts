@@ -1,5 +1,6 @@
 import { useMemo } from "react";
-import { useGetPostsQuery } from "../../../API/apislice";
+import { useGetPostsQuery } from "../../../../entities/entity/API/postApi";
+
 
 const usePosts = () => {
   const { 
