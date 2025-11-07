@@ -1,20 +1,16 @@
-import { useEffect, useState } from 'react'
 import PostList from './PostList'
 import withDataLoading from "../../shared/lib/hoc/WithLoading";
+import usePosts from '../../features/PostList/model/hooks/usePosts';
 
 const PostListWithLoading = withDataLoading(PostList);
 
 const PostLoading = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const { posts, isLoading } = usePosts();
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  }, []);
   return (
-    <PostListWithLoading 
+    <PostListWithLoading
       isLoading={isLoading}
+      posts={posts}
     />
   )
 }

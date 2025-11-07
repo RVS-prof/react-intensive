@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import type { IComment, IPostCard } from '../../../types/types';
+import type { IComment, IPostCard } from './type';
 import { MyButton } from '../../../shared/ui/Button/MyButton';
 import CommentList from '../../../widgets/CommentList/ui/CommentList';
 import style from './PostCard.module.css'

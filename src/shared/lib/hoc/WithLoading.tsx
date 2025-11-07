@@ -1,5 +1,5 @@
 import React from 'react';
-import type { WithLoadingProps } from '../../../types/types';
+import type { WithLoadingProps } from './type';
 import style from './WithLoading.module.css'
 
 function withLoading<P extends object>(

@@ -1,13 +1,15 @@
 import { ThemeProvider } from '../shared/lib/theme/ThemeProvider'
-import MainLayout from '../shared/MainLayout'
+import { RouterProvider } from "react-router";
 import './App.css'
+import { router } from './providers/router/routes';
+
 
 function App() {
 
 
   return (
     <ThemeProvider>
-      <MainLayout />
+      <RouterProvider router={router} />
     </ThemeProvider>
   )
 }

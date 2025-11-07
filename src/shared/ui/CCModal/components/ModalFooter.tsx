@@ -1,4 +1,4 @@
-import type { IProps } from '../../../../types/types';
+import type { IProps } from '../type';
 import styles from './Modal.module.css';
 
 export const ModalFooter = ({ children } : IProps) => {

@@ -1,4 +1,4 @@
-import type { IPost, IPostLengthFilter } from "../../../types/types"
+import type { IPost, IPostLengthFilter } from "../type"
 
 export const filterByLength = ( props : IPostLengthFilter) => {
   const newArray : IPost[] = JSON.parse(JSON.stringify(props.posts))
