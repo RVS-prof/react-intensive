@@ -1,12 +1,10 @@
 import { Outlet } from "react-router"
-import UserTabs from "../widgets/UserTabs/UserTabs"
+import LayoutHeader from "../widgets/LayoutHeader/LayoutHeader"
 
 export const User = () => {
   return (
     <>
-      <header>
-        <UserTabs/>
-      </header>
+      <LayoutHeader />
       <Outlet />
     </>
   )
