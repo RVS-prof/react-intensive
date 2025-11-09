@@ -2,6 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  min-height: 800px;
 }
 
 .card {
@@ -11,9 +13,24 @@
   border-radius: 5px;
   background-color: var(--card-bg);
   width: 200px;
+  height: 150px;
   display: flex;
+}
+
+.cardColumn {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
 }
 
 .img {
   width: 100px;
+}
+
+.Unfinished {
+  color: #ff0000;
+}
+
+.Completed {
+  color: #008000;
 }
