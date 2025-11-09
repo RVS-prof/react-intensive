@@ -1,6 +1,6 @@
-import type { IPost } from "../../../widgets/PostList/type";
+import type { IAPIEntity } from "../../../entities/type";
 
 export interface WithLoadingProps {
   isLoading: boolean;
-  posts: IPost[]
+  posts: IAPIEntity[]
 }

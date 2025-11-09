@@ -1,0 +1,19 @@
+.flexBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  margin: 15px;
+  padding: 20px 25px;
+  border: 2px solid var(--card-border);
+  border-radius: 5px;
+  background-color: var(--card-bg);
+  width: 200px;
+  display: flex;
+}
+
+.img {
+  width: 100px;
+}

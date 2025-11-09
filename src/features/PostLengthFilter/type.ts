@@ -1,10 +1,12 @@
+import type { IAPIEntity } from "../../entities/type";
+
 export interface ISetterByLength {
   lengthL: IByLength
   setLength: React.Dispatch<React.SetStateAction<IByLength>>;
 }
 
 export interface IPostLengthFilter {
-  posts: IPost[],
+  posts: IAPIEntity[],
   headerLength: IByLength
 }
 
