@@ -8,7 +8,7 @@ const usePosts = () => {
     isLoading
   } = useGetPostsQuery(
     { 
-      limit: 5, 
+      limit: 100, 
       offset: 0
     }
   );
