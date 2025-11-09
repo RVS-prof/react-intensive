@@ -13,21 +13,23 @@ export const UserPosts = () => {
 
   const filteredPosts = posts
     .filter(element => 
-      element.postId == userId)
+      element.userId == userId)
 
   const filteredComments = (id : number) => 
       comments.filter(element => 
         element.postId === id)
-
+  
   return (
     <section className={style.flexBox}>
-      {filteredPosts.map((post:IAPIEntity) => (
+      <section className={style.mainForm__cards}>
+        {filteredPosts.map((post:IAPIEntity) => (
         <PostCard
           key={post.id}
           post={post}
           comments={filteredComments(post.id)}
         />
       ))}
+      </section>
     </section>
   )
 }

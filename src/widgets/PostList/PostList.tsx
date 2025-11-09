@@ -11,7 +11,7 @@ const  PostList : React.FC<IPostList> = ({posts, comments}) => {
 
   const filteredComments = useCallback(
    (id : number) => 
-      comments.filter(element => 
+      comments.filter(element =>
         element.postId === id)
   ,[newPosts])
 

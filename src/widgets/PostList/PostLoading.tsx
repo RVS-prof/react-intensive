@@ -8,11 +8,11 @@ const PostListWithLoading = withDataLoading(PostList);
 const PostLoading = () => {
   const { posts, isLoading } = usePosts();
   const { comments } = useComments();
-
+  const safePosts = Array.isArray(posts) ? posts : [];
   return (
     <PostListWithLoading
       isLoading={isLoading}
-      posts={posts}
+      posts={safePosts}
       comments={comments}
     />
   )
