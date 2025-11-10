@@ -7,7 +7,7 @@ const useComments = () => {
     isLoading
   } = useGetCommentsQuery(
     { 
-      limit: 25, 
+      limit: 500,
       offset: 0
     }
   );

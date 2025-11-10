@@ -25,16 +25,16 @@ const  PostList : React.FC<IPostList> = ({posts, comments}) => {
   },[headerLength])
 
   return (
-    <section className={style.mainForm}>
-      <header className={style.mainForm__header}>
+    <section className={style['mainForm']}>
+      <header className={style['mainForm__header']}>
         <h1>
           Post List
         </h1>
       </header>
-      <section className={style.mainForm__selectList}>
+      <section className={style['mainForm__selectList']}>
         <PostLengthFilter lengthL = {headerLength} setLength = {setHeaderLength}/>
       </section>
-      <section className={style.mainForm__cards}>
+      <section className={style['mainForm__cards']}>
         {newPosts.map((post : Post) => (
           <PostCard 
             key={post.id}

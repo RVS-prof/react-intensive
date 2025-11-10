@@ -16,7 +16,7 @@ const PostCard = ( props : IPostCard ) => {
     if (!isShowMore) return null;
     return props.comments.map((comment : Comment) => {
       return <CommentList 
-        key = { comment.id } 
+        key = { comment.id }
         comment = { comment } 
       />
     });
@@ -34,7 +34,7 @@ const PostCard = ( props : IPostCard ) => {
           {props.post.body}
         </p>
       </div>
-      <MyButton onClick = {toggleShowMore} className={style.button}>
+      <MyButton onClick = {toggleShowMore} className={style['button']}>
         {!isShowMore 
           ?'show more...' 
           : 'hide comments...'
