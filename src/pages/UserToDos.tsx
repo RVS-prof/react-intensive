@@ -1,22 +1,14 @@
 import { useParams } from "react-router";
 import style from "./UserStyle.module.css"
 import useToDos from "../features/UserList/model/hooks/useTodos";
+import { filterByField } from "../shared/ui/ItemList/ItemList";
+import Loader from "../shared/ui/loader/loader";
 
 export const UserToDos = () => {
   const { todos, isLoading } = useToDos()
   const searchParams = useParams();
   const userId = Number(searchParams['id'])
-
-  const filteredTodos = todos
-    .filter(element => element.userId === userId)
-
-  const loadingFunc = () => {
-    return (
-      <div>
-        Загрузка...
-      </div>
-    )
-  }
+  const filteredTodos = filterByField(todos, 'userId', userId);
 
   const getTodos = () => {
     return (
@@ -38,10 +30,7 @@ export const UserToDos = () => {
 
   return (
     <section className={style['flexBox']}>
-      {isLoading
-        ? loadingFunc()
-        : getTodos()
-      }
+      <Loader isLoading={isLoading} thirdPartyFunction={getTodos}/>
     </section>
   )
 }
