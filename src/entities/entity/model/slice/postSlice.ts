@@ -1,8 +1,8 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
-import type { IAPIEntity } from '../../../type';
 import { postApi } from '../../API/postApi';
+import type { Post } from '../type';
 
-const postsAdapter = createEntityAdapter<IAPIEntity>();
+const postsAdapter = createEntityAdapter<Post>();
 
 const initialState = postsAdapter.getInitialState({
   status: 'idle' as 'idle' | 'loading' | 'succeeded' | 'failed',

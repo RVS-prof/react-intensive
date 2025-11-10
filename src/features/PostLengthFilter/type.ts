@@ -1,4 +1,4 @@
-import type { IAPIEntity } from "../../entities/type";
+import type { Post } from "../../entities/entity/model/type";
 
 export interface ISetterByLength {
   lengthL: IByLength
@@ -6,14 +6,8 @@ export interface ISetterByLength {
 }
 
 export interface IPostLengthFilter {
-  posts: IAPIEntity[],
+  posts: Post[],
   headerLength: IByLength
-}
-
-export interface IPost {
-  id : number;
-  title : string;
-  body : string;
 }
 
 export type IByLength = "long" | "short" | "default"

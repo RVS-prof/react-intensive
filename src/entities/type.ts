@@ -1,6 +1,8 @@
+import type { Comment, Post } from "./entity/model/type";
+
 export interface IPostCard {
-  post: IPost
-  comments: IAPIEntity[]
+  post: Post
+  comments: Comment[]
 }
 
 export interface IComment {
@@ -9,12 +11,6 @@ export interface IComment {
   name: string,
   email: string,
   body: string
-}
-
-export interface IPost {
-  id : number;
-  title : string;
-  body : string;
 }
 
 export interface IAPIEntity {
