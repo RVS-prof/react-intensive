@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router';
 import { ModalComponent } from '../CCModal';
-import style from './Infoject.module.css'
+import style from "./loginUser.module.css"
 import type { ILoginUser } from './type';
 import { useState } from 'react';
 import { MyButton } from '../Button/MyButton';
@@ -33,37 +33,33 @@ const LoginUser = (props:ILoginUser) => {
         </ModalComponent.Header>
         <ModalComponent.Children>
           <div>
+            <h3>
+              Активно всего с 1 по 10 айди пользователей
+            </h3>
             <input
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Введите числовой ID"
-              style={{
-                padding: '10px',
-                fontSize: '16px',
-                width: '200px',
-                marginRight: '10px',
-                border: `2px solid ${isButtonDisabled ? '#ccc' : '#4CAF50'}`
-              }}
+              style={
+                {border: `2px solid ${isButtonDisabled ? '#ccc' : '#4CAF50'}`}
+              }
+              className={style.input}
             />
             
             <MyButton
               onClick={handleButtonClick}
               disabled={isButtonDisabled}
               style={{
-                padding: '10px 20px',
-                fontSize: '16px',
                 backgroundColor: isButtonDisabled ? '#cccccc' : '#4CAF50',
-                color: 'white',
-                border: 'none',
-                borderRadius: '4px',
                 cursor: isButtonDisabled ? 'not-allowed' : 'pointer'
               }}
+              className={style.button}
             >
               Перейти по ID
             </MyButton>
             {inputValue.trim() !== '' && isNaN(Number(inputValue)) && (
-              <p style={{ color: 'red', marginTop: '10px' }}>
+              <p>
                 Пожалуйста, введите корректный числовой ID
               </p>
             )}

@@ -1,3 +1,5 @@
+import type { IAPIEntity } from "../../entities/type";
+
 export interface IComment {
   postId: number
   id: number,
@@ -15,6 +17,7 @@ export interface IPost {
 export type IByLength = "long" | "short" | "default"
 
 export interface IPostList {
-  posts: IPost[];
+  posts: IAPIEntity[];
+  comments: IAPIEntity[]
 }
 

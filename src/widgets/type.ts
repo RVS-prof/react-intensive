@@ -1,5 +1,5 @@
-import type { IComment } from "./PostList/type";
+import type { IAPIEntity } from "../entities/type";
 
 export interface ICommentList {
-  comment: IComment
+  comment: IAPIEntity
 }

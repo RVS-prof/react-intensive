@@ -7,7 +7,6 @@ const UserTabs = () => {
   const userId = searchParams.id
 
   const tabs: TabItem[] = [
-    { path: `/user/${userId}`, label: 'Профиль', icon: '👤' },
     { path: `/user/${userId}/posts`, label: 'Посты', icon: '📚' },
     { path: `/user/${userId}/todos`, label: 'Задачи', icon: '💼' },
     { path: `/user/${userId}/albums`, label: 'Альбомы', icon: '📝' },

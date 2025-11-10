@@ -1,6 +1,6 @@
 export interface IPostCard {
   post: IPost
-  comments: IComment[]
+  comments: IAPIEntity[]
 }
 
 export interface IComment {
@@ -15,4 +15,15 @@ export interface IPost {
   id : number;
   title : string;
   body : string;
+}
+
+export interface IAPIEntity {
+  userId? : number;
+  postId? : number;
+  id : number;
+  title? : string;
+  body? : string;
+  completed? : boolean;
+  name? : string;
+  email? : string;
 }
