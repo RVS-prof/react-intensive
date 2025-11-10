@@ -59,7 +59,6 @@ export const {
   clearError,
 } = postSlice.actions;
 
-// Улучшенные селекторы с проверками
 export const postsSelectors = postsAdapter.getSelectors();
 
 export const selectAllPosts = (state: any) => {
