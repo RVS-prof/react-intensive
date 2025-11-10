@@ -8,7 +8,7 @@ function withLoading<P extends object>(
   return ({ isLoading, ...props }: P & WithLoadingProps) => {
     if (isLoading) {
       return (
-        <div className={style.loadingContainer}>
+        <div className={style['loadingContainer']}>
           <div>Загрузка...</div>
         </div>
       );

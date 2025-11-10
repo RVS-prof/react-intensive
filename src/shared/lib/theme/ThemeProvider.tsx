@@ -1,5 +1,5 @@
-import { createContext, useEffect, useState } from "react"
-import type { ThemeContextType, IProps } from "./type"
+import { createContext, useEffect, useState, type PropsWithChildren } from "react"
+import type { ThemeContextType } from "./type"
 
 export const ThemeContext = createContext<ThemeContextType>({
   theme: "light",
@@ -7,7 +7,7 @@ export const ThemeContext = createContext<ThemeContextType>({
   toggleTheme: () => {}
 })
 
-export const ThemeProvider = ({children} : IProps) => {
+export const ThemeProvider: React.FC<PropsWithChildren> = ({children}) => {
   const [theme, setTheme] = useState("light")
 
   const toggleTheme = () => {

@@ -1,8 +1,8 @@
-import type { IProps } from '../type';
+import type { PropsWithChildren } from 'react';
 import styles from './Modal.module.css';
 
-export const ModalChildren = ({ children }: IProps) => {
-  return <div className={styles.button}>
+export const ModalChildren: React.FC<PropsWithChildren> = ({ children }) => {
+  return <div className={styles['button']}>
     {children}
   </div>;
 };

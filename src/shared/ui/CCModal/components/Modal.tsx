@@ -9,7 +9,7 @@ import type { IModalContextType } from '../type';
 export const ModalComponent = ({children, post}: IModalContextType) => {
   return (
     <ModalContext.Provider value={{post}}>
-        <div className={`${styles.modal} ${styles[post.size]}`} onClick={e => e.stopPropagation()}>
+        <div className={`${styles['modal']} ${styles[post.size]}`} onClick={e => e.stopPropagation()}>
           {children}
         </div>
     </ModalContext.Provider>
