@@ -6,10 +6,10 @@ import pepe from "./svg/kermit-the-frog.svg"
 export const UserAlbum = () => {
   const { album, isLoading } = useAlbum()
   const searchParams = useParams();
-  const userId = searchParams.id
+  const userId = Number(searchParams['id'])
 
   const filteredAlbum = album
-    .filter(element => element.userId == userId)
+    .filter(element => element.userId === userId)
 
   const loadingFunc = () => {
     return (
@@ -22,18 +22,18 @@ export const UserAlbum = () => {
   const getAlbum = () => {
     return (
         filteredAlbum.map(element => 
-          <section className={style.card}>
+          <section className={style['card']}>
             <header>
               {element.title}
             </header>
-            <img className={style.img} src={pepe} alt="" />
+            <img className={style['img']} src={pepe} alt="" />
           </section>
         )
     )
   }
 
   return (
-    <section className={style.flexBox}>
+    <section className={style['flexBox']}>
       {isLoading
         ? loadingFunc()
         : getAlbum()

@@ -5,10 +5,10 @@ import useToDos from "../features/UserList/model/hooks/useTodos";
 export const UserToDos = () => {
   const { todos, isLoading } = useToDos()
   const searchParams = useParams();
-  const userId = searchParams.id
+  const userId = Number(searchParams['id'])
 
   const filteredTodos = todos
-    .filter(element => element.userId == userId)
+    .filter(element => element.userId === userId)
 
   const loadingFunc = () => {
     return (
@@ -21,15 +21,15 @@ export const UserToDos = () => {
   const getTodos = () => {
     return (
         filteredTodos.map(element => 
-          <section className={`${style.card} ${style.cardColumn}`}>
+          <section className={`${style['card']} ${style['cardColumn']}`}>
             <header>
               <h1>
                 Task : {element.title}
               </h1>
             </header>
             {element.completed
-              ? <p className={style.Unfinished}>Unfinished</p>
-              : <p className={style.Completed}>Completed</p>
+              ? <p className={style['Unfinished']}>Unfinished</p>
+              : <p className={style['Completed']}>Completed</p>
             }
           </section>
         )
@@ -37,7 +37,7 @@ export const UserToDos = () => {
   }
 
   return (
-    <section className={style.flexBox}>
+    <section className={style['flexBox']}>
       {isLoading
         ? loadingFunc()
         : getTodos()
