@@ -1,18 +1,18 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import type { IAPIEntity } from "../../type"
+import type { Post } from "../model/type";
 
 export const postApi = createApi({
     reducerPath: 'postApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/' }),
     tagTypes: ['Post'],
     endpoints: (builder) => ({
-        getPosts: builder.query<IAPIEntity[], { limit: number, offset: number }>({
+        getPosts: builder.query<Post[], { limit: number, offset: number }>({
             query: ({limit, offset}) => `posts?_limit=${limit}&_offset=${offset}`,
 
             providesTags: ['Post'],
         }),
 
-        createPost: builder.mutation<IAPIEntity, Partial<IAPIEntity>>({
+        createPost: builder.mutation<Post, Partial<Post>>({
             query: (newPost) => ({
                 url: 'posts',
                 method: 'POST',
@@ -22,7 +22,7 @@ export const postApi = createApi({
             invalidatesTags: ['Post'],
         }),
 
-        updatePost: builder.mutation<IAPIEntity, { id: number; changes: Partial<IAPIEntity> }>({
+        updatePost: builder.mutation<Post, { id: number; changes: Partial<Post> }>({
             query: ({ id, changes }) => ({
                 url: `posts/${id}`,
                 method: 'PUT',

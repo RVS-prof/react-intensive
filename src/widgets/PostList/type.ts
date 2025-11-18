@@ -1,4 +1,4 @@
-import type { IAPIEntity } from "../../entities/type";
+import type { Comment, Post } from "../../entities/entity/model/type";
 
 export interface IComment {
   postId: number
@@ -8,16 +8,10 @@ export interface IComment {
   body: string
 }
 
-export interface IPost {
-  id : number;
-  title : string;
-  body : string;
-}
-
 export type IByLength = "long" | "short" | "default"
 
 export interface IPostList {
-  posts: IAPIEntity[];
-  comments: IAPIEntity[]
+  posts: Post[];
+  comments: Comment[]
 }
 

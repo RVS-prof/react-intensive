@@ -1,11 +1,9 @@
-// postSlice.ts
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
-import type { IAPIEntity } from '../../../type';
 import { postApi } from '../../API/postApi';
+import type { Post } from '../type';
 
-const postsAdapter = createEntityAdapter<IAPIEntity>();
+const postsAdapter = createEntityAdapter<Post>();
 
-// Явно указываем тип initialState
 const initialState = postsAdapter.getInitialState({
   status: 'idle' as 'idle' | 'loading' | 'succeeded' | 'failed',
   error: null as string | null,

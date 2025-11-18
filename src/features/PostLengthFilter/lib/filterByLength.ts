@@ -1,7 +1,8 @@
-import type { IPost, IPostLengthFilter } from "../type"
+import type { Post } from "../../../entities/entity/model/type";
+import type { IPostLengthFilter } from "../type"
 
 export const filterByLength = ( props : IPostLengthFilter) => {
-  const newArray : IPost[] = JSON.parse(JSON.stringify(props.posts))
+  const newArray : Post[] = JSON.parse(JSON.stringify(props.posts))
 
   switch(props.headerLength) {
     case "short":

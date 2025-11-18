@@ -1,35 +1,27 @@
 import { useParams } from "react-router";
 import style from "./UserStyle.module.css"
 import useToDos from "../features/UserList/model/hooks/useTodos";
+import { filterByField } from "../shared/ui/ItemList/ItemList";
+import Loader from "../shared/ui/loader/loader";
 
 export const UserToDos = () => {
   const { todos, isLoading } = useToDos()
   const searchParams = useParams();
-  const userId = searchParams.id
-
-  const filteredTodos = todos
-    .filter(element => element.userId == userId)
-
-  const loadingFunc = () => {
-    return (
-      <div>
-        Загрузка...
-      </div>
-    )
-  }
+  const userId = Number(searchParams['id'])
+  const filteredTodos = filterByField(todos, 'userId', userId);
 
   const getTodos = () => {
     return (
         filteredTodos.map(element => 
-          <section className={`${style.card} ${style.cardColumn}`}>
+          <section className={`${style['card']} ${style['cardColumn']}`}>
             <header>
               <h1>
                 Task : {element.title}
               </h1>
             </header>
             {element.completed
-              ? <p className={style.Unfinished}>Unfinished</p>
-              : <p className={style.Completed}>Completed</p>
+              ? <p className={style['Unfinished']}>Unfinished</p>
+              : <p className={style['Completed']}>Completed</p>
             }
           </section>
         )
@@ -37,11 +29,8 @@ export const UserToDos = () => {
   }
 
   return (
-    <section className={style.flexBox}>
-      {isLoading
-        ? loadingFunc()
-        : getTodos()
-      }
+    <section className={style['flexBox']}>
+      <Loader isLoading={isLoading} thirdPartyFunction={getTodos}/>
     </section>
   )
 }

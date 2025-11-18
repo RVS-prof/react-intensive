@@ -1,6 +1,7 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
+import type { User } from '../type';
 
-const usersAdapter = createEntityAdapter<any>({
+const usersAdapter = createEntityAdapter<User>({
   // sortComparer: (a, b) => b.id - a.id, 
 });
 
